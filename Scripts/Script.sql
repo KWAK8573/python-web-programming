@@ -1,0 +1,1 @@
+INSERT INTO bookmark_bookmark(title, url,pub_date) VALUES('2',null,'1994-01-13')

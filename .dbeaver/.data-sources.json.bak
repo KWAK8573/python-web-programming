@@ -1,0 +1,47 @@
+{
+	"folders": {},
+	"connections": {
+		"sqlite_jdbc-176abe140a7-5c62ecc77b07d9c7": {
+			"provider": "generic",
+			"driver": "sqlite_jdbc",
+			"name": "db.sqlite3",
+			"save-password": true,
+			"show-system-objects": true,
+			"read-only": false,
+			"configuration": {
+				"database": "C:\\mycode\\Helloproject\\db.sqlite3",
+				"url": "jdbc:sqlite:C:\\mycode\\Helloproject\\db.sqlite3",
+				"type": "dev",
+				"auth-model": "native"
+			},
+			"custom-properties": {
+				"database.meta.separate.connection": "false"
+			}
+		},
+		"sqlite_jdbc-176ad4c5ea6-30cb4d92a493d7ec": {
+			"provider": "generic",
+			"driver": "sqlite_jdbc",
+			"name": "db.sqlite3 2",
+			"save-password": true,
+			"show-system-objects": true,
+			"read-only": false,
+			"configuration": {
+				"database": "C:\\Users\\pc355\\Desktop\\12ger28\\crudproject\\db.sqlite3",
+				"url": "jdbc:sqlite:C:\\Users\\pc355\\Desktop\\12ger28\\crudproject\\db.sqlite3",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false
+		}
+	}
+}

@@ -2,7 +2,7 @@ from django.views.generic import ListView, DetailView, TemplateView
 from django.views.generic import ArchiveIndexView, YearArchiveView, MonthArchiveView
 from django.views.generic import DayArchiveView, TodayArchiveView
 from django.views.generic import FormView
-from django.conf import settings
+
 from django.db.models import Q
 from django.shortcuts import render
 

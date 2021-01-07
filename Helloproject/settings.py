@@ -14,6 +14,7 @@ import os
 
 
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -41,10 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'taggit.apps.TaggitAppConfig',
     'taggit_templatetags2',
-
+    'widget_tweaks',
     'bookmark.apps.BookmarkConfig',
     'blog.apps.BlogConfig',
-    'photo.apps.PhotoConfig'
+    'photo.apps.PhotoConfig',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +63,7 @@ ROOT_URLCONF = 'Helloproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['Helloproject/templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,3 +136,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 TAGGIT_CASE_INSENSITIVE = True
 TAGGIT_LIMIT = 50
+
+LOGIN_REDIRECT_URL = '/'

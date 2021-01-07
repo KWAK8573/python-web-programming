@@ -10,6 +10,11 @@ from django.shortcuts import render
 from blog.models import Post
 from blog.forms import PostSearchForm
 
+from django.views.generic import CreateView, UpdateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
+from Helloproject.views import OwnerOnlyMixin
+
 
 
 
@@ -85,10 +90,33 @@ class SearchFormView(FormView):
 
         return render(self.request, self.template_name, context)
     
+class PostCreateView(LoginRequiredMixin, CreateView):
+    model = Post
+    fields = ['title', 'slug', 'description', 'content', 'tags']
+    initial = {'slug': 'auto-filling-do-not-input'}
+    success_url = reverse_lazy('blog:index')
+
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        return super().form_valid(form)
     
-    
-    
-    
+
+class PostChangeLV(LoginRequiredMixin, ListView):
+    template_name = 'blog/post_change_list.html'
+
+    def get_queryset(self):
+        return Post.objects.filter(owner=self.request.user)
+
+
+class PostUpdateView(OwnerOnlyMixin, UpdateView):
+    model = Post
+    fields = ['title', 'slug', 'description', 'content', 'tags']
+    success_url = reverse_lazy('blog:index')
+
+
+class PostDeleteView(OwnerOnlyMixin, DeleteView) :
+    model = Post
+    success_url = reverse_lazy('blog:index')
     
     
     

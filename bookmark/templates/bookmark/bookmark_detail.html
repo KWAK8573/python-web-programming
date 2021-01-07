@@ -1,27 +1,14 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block title %}bookmark_detail.html{% endblock %}
 
- {% block content %}
-
-
-<body>
-
-<div id="content">
+{% block content %}
 
     <h1>{{ object.title }}</h1>
 
-	<br>
-	{{ object.pub_date }}
     <ul>
         <li>URL: <a href="{{ object.url }}">{{ object.url }}</a></li>
     </ul>
-</div>
-
-    <a href="{% url 'index' %}">돌아가기</a>
-    <a href="{% url 'delete' bookmark.id %}">삭제하기</a>
-     <a href="{% url 'update' bookmark.id %}">수정하기</a>
-
-</body>
 
 {% endblock %}
+

@@ -35,4 +35,4 @@ class Photo(models.Model):
 
     def get_absolute_url(self):
         return reverse('photo:photo_detail', args=(self.id,))
-    
+
